@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D7D408DD8D7E2649C06809E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59F1C2B2137DE26C81DBFA7 /* Pods.framework */; };
+		DCD58C681C49121C00D900AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C671C49121C00D900AD /* AppDelegate.swift */; };
+		DCD58C6A1C49121C00D900AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C691C49121C00D900AD /* ViewController.swift */; };
+		DCD58C6D1C49121C00D900AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD58C6B1C49121C00D900AD /* Main.storyboard */; };
+		DCD58C701C49121C00D900AD /* Whoot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C6E1C49121C00D900AD /* Whoot.xcdatamodeld */; };
+		DCD58C721C49121C00D900AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD58C711C49121C00D900AD /* Assets.xcassets */; };
+		DCD58C751C49121C00D900AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD58C731C49121C00D900AD /* LaunchScreen.storyboard */; };
+		DCD58C801C49121C00D900AD /* WhootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C7F1C49121C00D900AD /* WhootTests.swift */; };
+		DCD58C8B1C49121C00D900AD /* WhootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C8A1C49121C00D900AD /* WhootUITests.swift */; };
+		DCD58C9C1C4913DA00D900AD /* WHFacebookHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58C9B1C4913DA00D900AD /* WHFacebookHandler.swift */; };
+		DCD58CA61C49344800D900AD /* WHLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58CA51C49344800D900AD /* WHLoginViewController.swift */; };
+		DCD58CA81C49349700D900AD /* WHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58CA71C49349700D900AD /* WHUserDefaults.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCD58C7C1C49121C00D900AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD58C5C1C49121C00D900AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD58C631C49121C00D900AD;
+			remoteInfo = Whoot;
+		};
+		DCD58C871C49121C00D900AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD58C5C1C49121C00D900AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD58C631C49121C00D900AD;
+			remoteInfo = Whoot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC47F2F80397C953C34188F4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D59F1C2B2137DE26C81DBFA7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8109B080B6F0C216040A0BC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DCD58C641C49121C00D900AD /* Whoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD58C671C49121C00D900AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCD58C691C49121C00D900AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCD58C6C1C49121C00D900AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCD58C6F1C49121C00D900AD /* Whoot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Whoot.xcdatamodel; sourceTree = "<group>"; };
+		DCD58C711C49121C00D900AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCD58C741C49121C00D900AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCD58C761C49121C00D900AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD58C7B1C49121C00D900AD /* WhootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD58C7F1C49121C00D900AD /* WhootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhootTests.swift; sourceTree = "<group>"; };
+		DCD58C811C49121C00D900AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD58C861C49121C00D900AD /* WhootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD58C8A1C49121C00D900AD /* WhootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhootUITests.swift; sourceTree = "<group>"; };
+		DCD58C8C1C49121C00D900AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD58C9B1C4913DA00D900AD /* WHFacebookHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHFacebookHandler.swift; sourceTree = "<group>"; };
+		DCD58CA51C49344800D900AD /* WHLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHLoginViewController.swift; sourceTree = "<group>"; };
+		DCD58CA71C49349700D900AD /* WHUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHUserDefaults.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCD58C611C49121C00D900AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7D408DD8D7E2649C06809E /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C781C49121C00D900AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C831C49121C00D900AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9816A97DC9692A712EA8A1FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8109B080B6F0C216040A0BC /* Pods.debug.xcconfig */,
+				AC47F2F80397C953C34188F4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8563745BE9881EDD7A30159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D59F1C2B2137DE26C81DBFA7 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCD58C5B1C49121C00D900AD = {
+			isa = PBXGroup;
+			children = (
+				DCD58C661C49121C00D900AD /* Whoot */,
+				DCD58C7E1C49121C00D900AD /* WhootTests */,
+				DCD58C891C49121C00D900AD /* WhootUITests */,
+				DCD58C651C49121C00D900AD /* Products */,
+				9816A97DC9692A712EA8A1FF /* Pods */,
+				D8563745BE9881EDD7A30159 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCD58C651C49121C00D900AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCD58C641C49121C00D900AD /* Whoot.app */,
+				DCD58C7B1C49121C00D900AD /* WhootTests.xctest */,
+				DCD58C861C49121C00D900AD /* WhootUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCD58C661C49121C00D900AD /* Whoot */ = {
+			isa = PBXGroup;
+			children = (
+				DCD58C9B1C4913DA00D900AD /* WHFacebookHandler.swift */,
+				DCD58CA51C49344800D900AD /* WHLoginViewController.swift */,
+				DCD58C671C49121C00D900AD /* AppDelegate.swift */,
+				DCD58C691C49121C00D900AD /* ViewController.swift */,
+				DCD58C6B1C49121C00D900AD /* Main.storyboard */,
+				DCD58C711C49121C00D900AD /* Assets.xcassets */,
+				DCD58C731C49121C00D900AD /* LaunchScreen.storyboard */,
+				DCD58CA71C49349700D900AD /* WHUserDefaults.swift */,
+				DCD58C761C49121C00D900AD /* Info.plist */,
+				DCD58C6E1C49121C00D900AD /* Whoot.xcdatamodeld */,
+			);
+			path = Whoot;
+			sourceTree = "<group>";
+		};
+		DCD58C7E1C49121C00D900AD /* WhootTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCD58C7F1C49121C00D900AD /* WhootTests.swift */,
+				DCD58C811C49121C00D900AD /* Info.plist */,
+			);
+			path = WhootTests;
+			sourceTree = "<group>";
+		};
+		DCD58C891C49121C00D900AD /* WhootUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DCD58C8A1C49121C00D900AD /* WhootUITests.swift */,
+				DCD58C8C1C49121C00D900AD /* Info.plist */,
+			);
+			path = WhootUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCD58C631C49121C00D900AD /* Whoot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD58C8F1C49121C00D900AD /* Build configuration list for PBXNativeTarget "Whoot" */;
+			buildPhases = (
+				A4E068059AC966F42A486094 /* Check Pods Manifest.lock */,
+				DCD58C601C49121C00D900AD /* Sources */,
+				DCD58C611C49121C00D900AD /* Frameworks */,
+				DCD58C621C49121C00D900AD /* Resources */,
+				52F935E5080324A715C7498D /* Embed Pods Frameworks */,
+				BE7138A43A8F485FF0E13797 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Whoot;
+			productName = Whoot;
+			productReference = DCD58C641C49121C00D900AD /* Whoot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCD58C7A1C49121C00D900AD /* WhootTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD58C921C49121C00D900AD /* Build configuration list for PBXNativeTarget "WhootTests" */;
+			buildPhases = (
+				DCD58C771C49121C00D900AD /* Sources */,
+				DCD58C781C49121C00D900AD /* Frameworks */,
+				DCD58C791C49121C00D900AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCD58C7D1C49121C00D900AD /* PBXTargetDependency */,
+			);
+			name = WhootTests;
+			productName = WhootTests;
+			productReference = DCD58C7B1C49121C00D900AD /* WhootTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCD58C851C49121C00D900AD /* WhootUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD58C951C49121C00D900AD /* Build configuration list for PBXNativeTarget "WhootUITests" */;
+			buildPhases = (
+				DCD58C821C49121C00D900AD /* Sources */,
+				DCD58C831C49121C00D900AD /* Frameworks */,
+				DCD58C841C49121C00D900AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCD58C881C49121C00D900AD /* PBXTargetDependency */,
+			);
+			name = WhootUITests;
+			productName = WhootUITests;
+			productReference = DCD58C861C49121C00D900AD /* WhootUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCD58C5C1C49121C00D900AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Andre Green";
+				TargetAttributes = {
+					DCD58C631C49121C00D900AD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					DCD58C7A1C49121C00D900AD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = DCD58C631C49121C00D900AD;
+					};
+					DCD58C851C49121C00D900AD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = DCD58C631C49121C00D900AD;
+					};
+				};
+			};
+			buildConfigurationList = DCD58C5F1C49121C00D900AD /* Build configuration list for PBXProject "Whoot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCD58C5B1C49121C00D900AD;
+			productRefGroup = DCD58C651C49121C00D900AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCD58C631C49121C00D900AD /* Whoot */,
+				DCD58C7A1C49121C00D900AD /* WhootTests */,
+				DCD58C851C49121C00D900AD /* WhootUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCD58C621C49121C00D900AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD58C751C49121C00D900AD /* LaunchScreen.storyboard in Resources */,
+				DCD58C721C49121C00D900AD /* Assets.xcassets in Resources */,
+				DCD58C6D1C49121C00D900AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C791C49121C00D900AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C841C49121C00D900AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52F935E5080324A715C7498D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4E068059AC966F42A486094 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE7138A43A8F485FF0E13797 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCD58C601C49121C00D900AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD58C701C49121C00D900AD /* Whoot.xcdatamodeld in Sources */,
+				DCD58C9C1C4913DA00D900AD /* WHFacebookHandler.swift in Sources */,
+				DCD58C6A1C49121C00D900AD /* ViewController.swift in Sources */,
+				DCD58C681C49121C00D900AD /* AppDelegate.swift in Sources */,
+				DCD58CA61C49344800D900AD /* WHLoginViewController.swift in Sources */,
+				DCD58CA81C49349700D900AD /* WHUserDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C771C49121C00D900AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD58C801C49121C00D900AD /* WhootTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD58C821C49121C00D900AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD58C8B1C49121C00D900AD /* WhootUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCD58C7D1C49121C00D900AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD58C631C49121C00D900AD /* Whoot */;
+			targetProxy = DCD58C7C1C49121C00D900AD /* PBXContainerItemProxy */;
+		};
+		DCD58C881C49121C00D900AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD58C631C49121C00D900AD /* Whoot */;
+			targetProxy = DCD58C871C49121C00D900AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCD58C6B1C49121C00D900AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD58C6C1C49121C00D900AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCD58C731C49121C00D900AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD58C741C49121C00D900AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCD58C8D1C49121C00D900AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCD58C8E1C49121C00D900AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCD58C901C49121C00D900AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8109B080B6F0C216040A0BC /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Whoot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.Whoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCD58C911C49121C00D900AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC47F2F80397C953C34188F4 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Whoot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.Whoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		DCD58C931C49121C00D900AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WhootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.WhootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whoot.app/Whoot";
+			};
+			name = Debug;
+		};
+		DCD58C941C49121C00D900AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WhootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.WhootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whoot.app/Whoot";
+			};
+			name = Release;
+		};
+		DCD58C961C49121C00D900AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WhootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.WhootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Whoot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DCD58C971C49121C00D900AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WhootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Habberdashers.WhootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Whoot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCD58C5F1C49121C00D900AD /* Build configuration list for PBXProject "Whoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD58C8D1C49121C00D900AD /* Debug */,
+				DCD58C8E1C49121C00D900AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD58C8F1C49121C00D900AD /* Build configuration list for PBXNativeTarget "Whoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD58C901C49121C00D900AD /* Debug */,
+				DCD58C911C49121C00D900AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD58C921C49121C00D900AD /* Build configuration list for PBXNativeTarget "WhootTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD58C931C49121C00D900AD /* Debug */,
+				DCD58C941C49121C00D900AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD58C951C49121C00D900AD /* Build configuration list for PBXNativeTarget "WhootUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD58C961C49121C00D900AD /* Debug */,
+				DCD58C971C49121C00D900AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCD58C6E1C49121C00D900AD /* Whoot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCD58C6F1C49121C00D900AD /* Whoot.xcdatamodel */,
+			);
+			currentVersion = DCD58C6F1C49121C00D900AD /* Whoot.xcdatamodel */;
+			path = Whoot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DCD58C5C1C49121C00D900AD /* Project object */;
+}
