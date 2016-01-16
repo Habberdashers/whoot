@@ -35,41 +35,82 @@ struct WHFacebookHandler {
         )
     }
     
-    func currentToken() -> FBSDKAccessToken {
-        return FBSDKAccessToken.currentAccessToken
-    }
     
     func loginFromViewController(fromViewController: UIViewController, withCompletion completion: () -> Void) {
-        NSLog("%@ %@", NSStringFromClass(self.self!), NSStringFromSelector(cmd))
-        var login: FBSDKLoginManager = FBSDKLoginManager()
-        login.logInWithReadPermissions(self.permissions, fromViewController: fromViewController, handler: {(result: FBSDKLoginManagerLoginResult, error: NSError) -> Void in
-            if error! {
-                NSLog("Error logging into facebook %@", error.description)
-            }
-            else if result.isCancelled {
-                NSLog("Canceled login to facebook")
-            }
-            else {
-                self.getFBUserInfo()
-            }
-            
-        })
-    }
-    
-    func getFBUserInfo() {
-        NSLog("%@ %@", NSStringFromClass(self.self!), NSStringFromSelector(cmd))
-        if FBSDKAccessToken.currentAccessToken() {
-            let params = [
-                "fields": "id, name, link, first_name, last_name, picture.type(large), email"
-            ]
-            
-            FBSDKGraphRequest(graphPath: "me", parameters: params).startWithCompletionHandler({(connection: FBSDKGraphRequestConnection, result: AnyObject, error: NSError) -> Void in
-                if !error {
-                    self.userInfoRecieved(result)
+        FBSDKLoginManager().logInWithReadPermissions(
+            self.permissions,
+            fromViewController: fromViewController)
+            { (result, error) -> Void in
+                if error != nil {
+                    print("error in login from veiw controller: \(error)")
+                } else if result.isCancelled {
+                  print("user canceld facebook login")
+                } else {
+                    print("got user info")
+                    let fields = "id, name, link, first_name, last_name, picture.type(large), email"
+                    let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": fields]);
+                    fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+                        
+                        if error == nil {
+                            print("User Info : \(result)")
+                            if let info = result as? [String:AnyObject] {
+                                let user = WHUser(fbInfo: info)
+                                print("got user: \(user)")
+                                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                appDelegate.users.push(user)
+                                self.getFacebookPic(user, completion: { (data) -> Void in
+                                    if data == nil {
+                                        print("No user image for \(user.email)")
+                                    } else {
+                                        pring("Got pic for \(user.email)")
+                                    }
+                                })
+                            }
+                        } else {
+                            print("Error Getting Info \(error)");
+                            completion()
+                        }
+                    }
                 }
-            })
         }
     }
+    
+    func getFacebookPic(user:WHUser, completion:(image: UIImage?) -> Void ){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let picCache = appDelegate.picCache
+        if let image = picCache.getImage(user.email) {
+            completion(image: image)
+            return
+        }
+        
+        let restHandler = WHRestHandler()
+        let url = "https://graph.facebook.com/\(user.fbId)/picture?type=large"
+        restHandler.getPicFromUri(url) { (picData) -> Void in
+            if picData == nil {
+                print("Error: failed to fetch image")
+                return
+            }
+            
+            if let pic = UIImage(data: picData) {
+                picCache.setImage(user.email, image: pic)
+                completion(image: pic)
+            }
+        }
+    }
+    
+//    func getFBUserInfo() {
+//        if (FBSDKAccessToken.currentAccessToken() != nil) {
+//            let params = [
+//                "fields": "id, name, link, first_name, last_name, picture.type(large), email"
+//            ]
+//            
+//            FBSDKGraphRequest(graphPath: "me", parameters: params).startWithCompletionHandler({(connection: FBSDKGraphRequestConnection, result: AnyObject, error: NSError) -> Void in
+//                if !error {
+//                    self.userInfoRecieved(result)
+//                }
+//            })
+//        }
+//    }
     
     func userInfoRecieved(info: [NSObject : AnyObject]) {
 

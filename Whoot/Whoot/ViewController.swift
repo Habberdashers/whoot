@@ -12,7 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.view.backgroundColor = UIColor.redColor()
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let isSignedIn = userDefaults.valueForKey(WHUserDefault.LoggedIn.rawValue) as! Bool? {
+            if isSignedIn {
+                self.performSegueWithIdentifier(WHSegue.RootToCurrentlyPlaying.rawValue, sender: self)
+            } else {
+                self.performSegueWithIdentifier(WHSegue.RootToLogin.rawValue, sender: self)
+            }
+        } else {
+            userDefaults.setBool(false, forKey: WHUserDefault.LoggedIn.rawValue)
+            self.performSegueWithIdentifier(WHSegue.RootToLogin.rawValue, sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
