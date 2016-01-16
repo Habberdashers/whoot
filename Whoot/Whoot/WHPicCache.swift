@@ -18,12 +18,13 @@ struct WHPicCache {
         self.cache = picCache
     }
     
-    func getImage(userName: String) -> UIImage? {
+    func getImage(userName: String, completion: (pic: UIImage?) -> Void) {
         if let image = self.cache.objectForKey(userName) as? UIImage {
-            return image
+            completion(pic: image)
+            return
         }
         
-        return nil
+        completion(pic: nil)
     }
     
     func setImage(userName: String, image: UIImage) {

@@ -16,15 +16,22 @@ class WHLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.yellowColor()
+        self.view.backgroundColor = UIColor.whiteColor()
     }
     
     @IBAction func faceBookButtonPressed(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let facebookHandler = appDelegate.fbHandler
-        facebookHandler.loginFromViewController(self) { () -> Void in
+        facebookHandler.loginFromViewController(self) { (success) -> Void in
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setBool(success, forKey: WHUserDefault.LoggedIn.rawValue)
+            userDefaults.synchronize()
             
+            success ? self.performSegueWithIdentifier(WHSegue.LoginToCurrentlyPlaying.rawValue, sender: self) :
+                print("Failed to login")
         }
     }
+    
+    
     
 }

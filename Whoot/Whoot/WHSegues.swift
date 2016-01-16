@@ -11,5 +11,5 @@ import Foundation
 enum WHSegue: String {
     case RootToCurrentlyPlaying = "RootToCurrentlyPlaying"
     case RootToLogin = "RootToLogin"
-    case LoginToCurrentlyPlaying = "LoginToCurrently"
+    case LoginToCurrentlyPlaying = "LoginToCurrentlyPlaying"
 }
