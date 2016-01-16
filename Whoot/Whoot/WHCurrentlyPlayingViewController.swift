@@ -95,7 +95,11 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
         }
         
         
-        
+        // testing music
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let musicHandler = appDelegate.musicHandler
+        musicHandler.grabMusic()
+        musicHandler.printMusic()
     }
     
     func makePullingText(user: WHUser, isAlpha: Bool) -> String {
