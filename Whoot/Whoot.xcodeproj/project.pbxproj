@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D7D408DD8D7E2649C06809E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59F1C2B2137DE26C81DBFA7 /* Pods.framework */; };
+		DC993AA11C4A511200E409DC /* WHUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA01C4A511200E409DC /* WHUserManager.swift */; };
+		DC993AA31C4A5C7200E409DC /* WhootColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA21C4A5C7200E409DC /* WhootColors.swift */; };
+		DC993AA51C4A6AB100E409DC /* WHNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA41C4A6AB100E409DC /* WHNotifications.swift */; };
+		DC993AA71C4A6F6100E409DC /* WHMainTableVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA61C4A6F6100E409DC /* WHMainTableVeiwCell.swift */; };
+		DC993AA91C4A713C00E409DC /* WHTableViewCellId.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */; };
+		DC993AAB1C4A7F9000E409DC /* WHMusicHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */; };
 		DCABAFEF1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFEE1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift */; };
 		DCABAFF11C4959AE000A224D /* WHSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFF01C4959AE000A224D /* WHSegues.swift */; };
 		DCABAFF41C496716000A224D /* WHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFF31C496716000A224D /* WHUser.swift */; };
@@ -48,6 +54,12 @@
 		AC47F2F80397C953C34188F4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D59F1C2B2137DE26C81DBFA7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8109B080B6F0C216040A0BC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DC993AA01C4A511200E409DC /* WHUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHUserManager.swift; sourceTree = "<group>"; };
+		DC993AA21C4A5C7200E409DC /* WhootColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhootColors.swift; sourceTree = "<group>"; };
+		DC993AA41C4A6AB100E409DC /* WHNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHNotifications.swift; sourceTree = "<group>"; };
+		DC993AA61C4A6F6100E409DC /* WHMainTableVeiwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHMainTableVeiwCell.swift; sourceTree = "<group>"; };
+		DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHTableViewCellId.swift; sourceTree = "<group>"; };
+		DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHMusicHandler.swift; sourceTree = "<group>"; };
 		DCABAFEE1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHCurrentlyPlayingViewController.swift; sourceTree = "<group>"; };
 		DCABAFF01C4959AE000A224D /* WHSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHSegues.swift; sourceTree = "<group>"; };
 		DCABAFF31C496716000A224D /* WHUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHUser.swift; sourceTree = "<group>"; };
@@ -141,6 +153,7 @@
 		DCD58C661C49121C00D900AD /* Whoot */ = {
 			isa = PBXGroup;
 			children = (
+				DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */,
 				DCABAFF31C496716000A224D /* WHUser.swift */,
 				DCABAFF51C49FD92000A224D /* WHPicHandler.swift */,
 				DCABAFF71C4A062C000A224D /* WHRestHandler.swift */,
@@ -152,11 +165,16 @@
 				DCD58C671C49121C00D900AD /* AppDelegate.swift */,
 				DCD58C691C49121C00D900AD /* ViewController.swift */,
 				DCD58C6B1C49121C00D900AD /* Main.storyboard */,
+				DC993AA61C4A6F6100E409DC /* WHMainTableVeiwCell.swift */,
 				DCD58C711C49121C00D900AD /* Assets.xcassets */,
 				DCD58C731C49121C00D900AD /* LaunchScreen.storyboard */,
 				DCD58CA71C49349700D900AD /* WHUserDefaults.swift */,
+				DC993AA01C4A511200E409DC /* WHUserManager.swift */,
 				DCD58C761C49121C00D900AD /* Info.plist */,
 				DCD58C6E1C49121C00D900AD /* Whoot.xcdatamodeld */,
+				DC993AA21C4A5C7200E409DC /* WhootColors.swift */,
+				DC993AA41C4A6AB100E409DC /* WHNotifications.swift */,
+				DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */,
 			);
 			path = Whoot;
 			sourceTree = "<group>";
@@ -366,13 +384,19 @@
 				DCD58C9C1C4913DA00D900AD /* WHFacebookHandler.swift in Sources */,
 				DCABAFEF1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift in Sources */,
 				DCABAFF41C496716000A224D /* WHUser.swift in Sources */,
+				DC993AA31C4A5C7200E409DC /* WhootColors.swift in Sources */,
 				DCD58C6A1C49121C00D900AD /* ViewController.swift in Sources */,
 				DCABAFFA1C4A169C000A224D /* WHPicCache.swift in Sources */,
 				DCABAFF11C4959AE000A224D /* WHSegues.swift in Sources */,
 				DCD58C681C49121C00D900AD /* AppDelegate.swift in Sources */,
 				DCD58CA61C49344800D900AD /* WHLoginViewController.swift in Sources */,
+				DC993AA91C4A713C00E409DC /* WHTableViewCellId.swift in Sources */,
+				DC993AA71C4A6F6100E409DC /* WHMainTableVeiwCell.swift in Sources */,
+				DC993AA11C4A511200E409DC /* WHUserManager.swift in Sources */,
 				DCD58CA81C49349700D900AD /* WHUserDefaults.swift in Sources */,
+				DC993AA51C4A6AB100E409DC /* WHNotifications.swift in Sources */,
 				DCABAFF61C49FD92000A224D /* WHPicHandler.swift in Sources */,
+				DC993AAB1C4A7F9000E409DC /* WHMusicHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

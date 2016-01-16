@@ -36,7 +36,7 @@ struct WHFacebookHandler {
     }
     
     
-    func loginFromViewController(fromViewController: UIViewController, withCompletion completion: () -> Void) {
+    func loginFromViewController(fromViewController: UIViewController, withCompletion completion: (success: Bool) -> Void) {
         FBSDKLoginManager().logInWithReadPermissions(
             self.permissions,
             fromViewController: fromViewController)
@@ -57,18 +57,20 @@ struct WHFacebookHandler {
                                 let user = WHUser(fbInfo: info)
                                 print("got user: \(user)")
                                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                                appDelegate.users.push(user)
+                                appDelegate.userManager.addUser(user)
+                                appDelegate.userManager.currentUser = user
+                                completion(success: true)
                                 self.getFacebookPic(user, completion: { (data) -> Void in
                                     if data == nil {
                                         print("No user image for \(user.email)")
                                     } else {
-                                        pring("Got pic for \(user.email)")
+                                        print("Got pic for \(user.email)")
                                     }
                                 })
                             }
                         } else {
                             print("Error Getting Info \(error)");
-                            completion()
+                            completion(success: false)
                         }
                     }
                 }
@@ -78,24 +80,26 @@ struct WHFacebookHandler {
     func getFacebookPic(user:WHUser, completion:(image: UIImage?) -> Void ){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let picCache = appDelegate.picCache
-        if let image = picCache.getImage(user.email) {
-            completion(image: image)
-            return
-        }
-        
-        let restHandler = WHRestHandler()
-        let url = "https://graph.facebook.com/\(user.fbId)/picture?type=large"
-        restHandler.getPicFromUri(url) { (picData) -> Void in
-            if picData == nil {
-                print("Error: failed to fetch image")
-                return
-            }
-            
-            if let pic = UIImage(data: picData) {
-                picCache.setImage(user.email, image: pic)
+        picCache.getImage(user.email) { (pic) -> Void in
+            if pic == nil {
+                let restHandler = WHRestHandler()
+                let url = "https://graph.facebook.com/\(user.fbId)/picture?type=large"
+                restHandler.getPicFromUri(url) { (picData) -> Void in
+                    if picData == nil {
+                        print("Error: failed to fetch image")
+                        return
+                    }
+                    
+                    if let pic = UIImage(data: picData!) {
+                        picCache.setImage(user.email, image: pic)
+                        completion(image: pic)
+                    }
+                }
+            } else {
                 completion(image: pic)
             }
         }
+        
     }
     
 //    func getFBUserInfo() {

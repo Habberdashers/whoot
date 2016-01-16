@@ -24,7 +24,12 @@ class WHUser {
         self.fbId = fbInfo["id"] as! String
         self.email = fbInfo["email"] as! String
         
-        let picture = fbInfo["data"] as! [String:AnyObject]
-        self.picLink = picture["url"] as! String
+        let picture = fbInfo["picture"] as! [String:AnyObject]
+        let picData = picture["data"] as! [String:AnyObject]
+        self.picLink = picData["url"] as! String
+    }
+    
+    func fullName() -> String {
+        return self.firstName + " " + self.lastName
     }
 }
