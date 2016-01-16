@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,9 +18,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="TZF-mB-fay" kind="presentation" identifier="RootToCurrentlyPlayingSegue" id="rOF-po-gXB"/>
+                        <segue destination="Mag-OB-X2R" kind="presentation" identifier="RootToLogin" modalTransitionStyle="crossDissolve" id="EnW-Vh-4OD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="392" y="118"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Kv6-UL-kTH">
+            <objects>
+                <viewController id="Mag-OB-X2R" customClass="WHLoginViewController" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5oz-oS-OV7"/>
+                        <viewControllerLayoutGuide type="bottom" id="2N5-eN-fFC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EmX-dC-Lgr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-El-aZ3">
+                                <rect key="frame" x="183" y="256" width="234" height="87"/>
+                                <state key="normal" title="FaceBook Login"/>
+                                <connections>
+                                    <action selector="faceBookButtonPressed:" destination="Mag-OB-X2R" eventType="touchDown" id="OgZ-tJ-UAc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerX" secondItem="EmX-dC-Lgr" secondAttribute="centerX" id="B7k-bM-OeU"/>
+                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerY" secondItem="EmX-dC-Lgr" secondAttribute="centerY" id="Pnw-LY-IKM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FaceBookLoginButton" destination="I1t-El-aZ3" id="rG2-Tq-KI2"/>
+                        <segue destination="TZF-mB-fay" kind="presentation" identifier="LoginToCurrentlyPlaying" id="ULH-dZ-k6V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6K2-eL-r5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="628"/>
+        </scene>
+        <!--Currently Playing View Controller-->
+        <scene sceneID="8ji-b5-1gQ">
+            <objects>
+                <viewController id="TZF-mB-fay" customClass="WHCurrentlyPlayingViewController" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hse-0R-v70"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Px-Xf-Iw8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sxx-GX-cjC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fY6-OB-duq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-247"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ULH-dZ-k6V"/>
+    </inferredMetricsTieBreakers>
 </document>
