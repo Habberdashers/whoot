@@ -56,6 +56,7 @@ struct WHFacebookHandler {
                             if let info = result as? [String:AnyObject] {
                                 let user = WHUser(fbInfo: info)
                                 print("got user: \(user)")
+                                self.saveUserToServer(user)
                                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                                 appDelegate.userManager.addUser(user)
                                 appDelegate.userManager.currentUser = user
@@ -100,6 +101,26 @@ struct WHFacebookHandler {
             }
         }
         
+    }
+    
+    func saveUserToServer(user: WHUser) {
+        let restHandler = WHRestHandler()
+        restHandler.post(WHServerPath.SaveUser, objectToPost: user.toJson()) { (responseObject) -> Void in
+            if responseObject == nil {
+                print("Got a nill response saving user: \(user.email)")
+                return
+            }
+            
+            if let responseDict = responseObject as? [String:AnyObject?] {
+                if let error = responseDict["error"] {
+                    print("Error saving user\(error)")
+                }
+                
+                if let payload = responseDict["payload"] {
+                    print("received response saveing user: \(payload)")
+                }
+            }
+        }
     }
     
 //    func getFBUserInfo() {
