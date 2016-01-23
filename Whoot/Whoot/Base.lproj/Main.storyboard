@@ -17,11 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowie.png" translatesAutoresizingMaskIntoConstraints="NO" id="pI0-0l-kV5">
+                                <rect key="frame" x="150" y="199" width="300" height="201"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pI0-0l-kV5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AOW-fZ-fp1"/>
+                            <constraint firstItem="pI0-0l-kV5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gNV-HH-VBD"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="TZF-mB-fay" kind="presentation" identifier="RootToCurrentlyPlaying" id="rOF-po-gXB"/>
-                        <segue destination="Mag-OB-X2R" kind="presentation" identifier="RootToLogin" modalTransitionStyle="crossDissolve" id="EnW-Vh-4OD"/>
+                        <segue destination="Mag-OB-X2R" kind="presentation" identifier="RootToLogin" animates="NO" modalTransitionStyle="crossDissolve" id="EnW-Vh-4OD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -40,10 +49,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-El-aZ3">
-                                <rect key="frame" x="183" y="256" width="234" height="87"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <state key="normal" title="Login"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-El-aZ3">
+                                <rect key="frame" x="150" y="199" width="300" height="201"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="201" id="JtB-Mp-PtT"/>
+                                    <constraint firstAttribute="width" constant="300" id="bbl-E1-T5v"/>
+                                </constraints>
+                                <state key="normal" title="Login" image="bowie.png"/>
                                 <connections>
                                     <action selector="faceBookButtonPressed:" destination="Mag-OB-X2R" eventType="touchDown" id="OgZ-tJ-UAc"/>
                                 </connections>
@@ -51,13 +63,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerX" secondItem="EmX-dC-Lgr" secondAttribute="centerX" id="B7k-bM-OeU"/>
-                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerY" secondItem="EmX-dC-Lgr" secondAttribute="centerY" id="Pnw-LY-IKM"/>
+                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerY" secondItem="EmX-dC-Lgr" secondAttribute="centerY" id="Mh4-UT-VUl"/>
+                            <constraint firstItem="I1t-El-aZ3" firstAttribute="centerX" secondItem="EmX-dC-Lgr" secondAttribute="centerX" id="Qmm-Hf-isD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="FaceBookLoginButton" destination="I1t-El-aZ3" id="rG2-Tq-KI2"/>
-                        <segue destination="TZF-mB-fay" kind="presentation" identifier="LoginToCurrentlyPlaying" id="ULH-dZ-k6V"/>
+                        <segue destination="TZF-mB-fay" kind="presentation" identifier="LoginToCurrentlyPlaying" modalTransitionStyle="crossDissolve" id="ULH-dZ-k6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K2-eL-r5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,16 +96,9 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bb-wA-X4A" id="Uf1-2r-iq8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-d6-jYT">
-                                                    <rect key="frame" x="8" y="0.0" width="64" height="61.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="1D5-C7-DLK"/>
-                                                        <constraint firstAttribute="height" constant="61.5" id="AtF-aC-4fT"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-AL-ClK">
                                                     <rect key="frame" x="80" y="8" width="440" height="21"/>
                                                     <constraints>
@@ -109,34 +114,43 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2k-YC-eT0">
-                                                    <rect key="frame" x="557" y="1" width="35" height="35"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bowie_upvotearrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="X2k-YC-eT0">
+                                                    <rect key="frame" x="554" y="8" width="32" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="533-Gd-xmt"/>
-                                                        <constraint firstAttribute="height" constant="35" id="v43-jV-LyL"/>
+                                                        <constraint firstAttribute="width" constant="32" id="ESr-ss-AVy"/>
+                                                        <constraint firstAttribute="height" constant="19" id="Yg6-Hh-yhI"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awB-Io-q09">
-                                                    <rect key="frame" x="553" y="37" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awB-Io-q09">
+                                                    <rect key="frame" x="549" y="31" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowie_lightning.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-d6-jYT">
+                                                    <rect key="frame" x="19" y="13" width="37" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41.5" id="Jqt-kS-MAl"/>
+                                                        <constraint firstAttribute="width" constant="37" id="pwv-au-SZg"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="ogZ-d6-jYT" firstAttribute="centerY" secondItem="Uf1-2r-iq8" secondAttribute="centerY" id="8CK-x5-Ift"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QIL-BZ-eJk" secondAttribute="bottom" constant="3.5" id="BZ8-wD-CGX"/>
-                                                <constraint firstItem="ogZ-d6-jYT" firstAttribute="top" secondItem="Uf1-2r-iq8" secondAttribute="topMargin" constant="-8" id="Dp1-ad-Wsa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="awB-Io-q09" secondAttribute="trailing" constant="1" id="Fal-nz-5vh"/>
                                                 <constraint firstAttribute="topMargin" secondItem="n0e-AL-ClK" secondAttribute="top" id="Kmn-0O-SW4"/>
-                                                <constraint firstItem="n0e-AL-ClK" firstAttribute="leading" secondItem="ogZ-d6-jYT" secondAttribute="trailing" constant="8" id="M9F-zY-osY"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QIL-BZ-eJk" secondAttribute="trailing" constant="72" id="OgI-TB-QNh"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="awB-Io-q09" secondAttribute="bottom" constant="3.5" id="T2Y-2n-csH"/>
-                                                <constraint firstItem="X2k-YC-eT0" firstAttribute="top" secondItem="Uf1-2r-iq8" secondAttribute="topMargin" constant="-7" id="aFK-LC-7GL"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="ogZ-d6-jYT" secondAttribute="leading" id="bMi-kI-3G0"/>
-                                                <constraint firstItem="QIL-BZ-eJk" firstAttribute="leading" secondItem="ogZ-d6-jYT" secondAttribute="trailing" constant="8" id="eZO-Ci-ljh"/>
+                                                <constraint firstAttribute="topMargin" secondItem="X2k-YC-eT0" secondAttribute="top" id="QYr-NM-ah2"/>
+                                                <constraint firstItem="awB-Io-q09" firstAttribute="top" secondItem="X2k-YC-eT0" secondAttribute="bottom" constant="4" id="Y0q-Dm-L69"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X2k-YC-eT0" secondAttribute="trailing" constant="6" id="aC5-8R-DP5"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="awB-Io-q09" secondAttribute="trailing" constant="-3" id="ers-CC-kVh"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="X2k-YC-eT0" secondAttribute="trailing" id="heQ-o6-BzZ"/>
+                                                <constraint firstItem="QIL-BZ-eJk" firstAttribute="leading" secondItem="ogZ-d6-jYT" secondAttribute="trailing" constant="24" id="qGa-DO-A5S"/>
+                                                <constraint firstItem="n0e-AL-ClK" firstAttribute="leading" secondItem="ogZ-d6-jYT" secondAttribute="trailing" constant="24" id="snm-bL-EgX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="n0e-AL-ClK" secondAttribute="trailing" constant="72" id="vbp-ne-d5a"/>
+                                                <constraint firstItem="ogZ-d6-jYT" firstAttribute="leading" secondItem="Uf1-2r-iq8" secondAttribute="leadingMargin" constant="11" id="y65-0N-CIl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -208,7 +222,12 @@
             <point key="canvasLocation" x="1276" y="-247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bowie.png" width="300" height="201"/>
+        <image name="bowie_lightning.png" width="162" height="323"/>
+        <image name="bowie_upvotearrow.png" width="156" height="81"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rOF-po-gXB"/>
+        <segue reference="ULH-dZ-k6V"/>
     </inferredMetricsTieBreakers>
 </document>

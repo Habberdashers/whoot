@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+class WHCurrentlyPlayingViewController:
+UIViewController,
+UITableViewDataSource,
+UITableViewDelegate,
+CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
@@ -22,18 +28,8 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
     let picCache: WHPicCache
     let headerAlphaColor = UIColor(red:241, green:101, blue:102)
     let headerNonAlphaColor = UIColor(red:80, green:176, blue:227)
-    var currentSongs = [
-        "The Man Who Sold the World",
-        "Five Years",
-        "Modern Love",
-        "Rebel, Rebel",
-        "Ziggy Stardust",
-        "Young Americans",
-        "Heroes",
-        "Moonage Daydream",
-        "Changes",
-        "Space Oddity"
-    ]
+    var locationManager: CLLocationManager!
+    var currentLocation = CLLocationCoordinate2D()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -41,6 +37,9 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
         self.user = appDelegate.userManager.currentUser!
         self.alphaUser = appDelegate.userManager.alphaUser
         self.picCache = appDelegate.picCache
+        
+        // location services
+        self.locationManager = CLLocationManager()
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -51,6 +50,10 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
         self.user = appDelegate.userManager.currentUser!
         self.alphaUser = appDelegate.userManager.alphaUser
         self.picCache = appDelegate.picCache
+        
+        // location services
+        self.locationManager = CLLocationManager()
+
         
         super.init(coder: aDecoder)!
     }
@@ -95,7 +98,16 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
         }
         
         
+        // testing music
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let musicHandler = appDelegate.musicHandler
+        musicHandler.grabMusic()
+        musicHandler.printMusic()
         
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
     
     func makePullingText(user: WHUser, isAlpha: Bool) -> String {
@@ -108,7 +120,7 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentSongs.count
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -124,5 +136,40 @@ class WHCurrentlyPlayingViewController: UIViewController, UITableViewDataSource,
         return cell
     }
     
+    // MARK: location manager delegate methods
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coord = locations.last {
+            self.currentLocation = coord.coordinate
+            print("updating location: \(self.currentLocation.latitude), \(self.currentLocation.longitude)")
+        } else {
+            print("locations array empty")
+        }
+    }
     
+    // authorization status
+    func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            var shouldIAllow = false
+            let locationStatus:String
+            
+            switch status {
+            case CLAuthorizationStatus.Restricted:
+                locationStatus = "Restricted Access to location"
+            case CLAuthorizationStatus.Denied:
+                locationStatus = "User denied access to location"
+            case CLAuthorizationStatus.NotDetermined:
+                locationStatus = "Status not determined"
+            default:
+                locationStatus = "Allowed to location Access"
+                shouldIAllow = true
+            }
+
+            if (shouldIAllow == true) {
+                NSLog("Location to Allowed")
+                // Start location services
+                locationManager.startUpdatingLocation()
+            } else {
+                NSLog("Denied access: \(locationStatus)")
+            }
+    }
 }

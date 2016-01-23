@@ -14,6 +14,13 @@
 		DC993AA71C4A6F6100E409DC /* WHMainTableVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA61C4A6F6100E409DC /* WHMainTableVeiwCell.swift */; };
 		DC993AA91C4A713C00E409DC /* WHTableViewCellId.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */; };
 		DC993AAB1C4A7F9000E409DC /* WHMusicHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */; };
+		DC993AAD1C4A831D00E409DC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC993AAC1C4A831C00E409DC /* MediaPlayer.framework */; };
+		DC993AAF1C4A83DA00E409DC /* WHSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC993AAE1C4A83DA00E409DC /* WHSong.swift */; };
+		DC993AB61C4AB63700E409DC /* 5s_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC993AB11C4AB63700E409DC /* 5s_icon.png */; };
+		DC993AB71C4AB63700E409DC /* 6s_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC993AB21C4AB63700E409DC /* 6s_icon.png */; };
+		DC993AB81C4AB63700E409DC /* bowie.png in Resources */ = {isa = PBXBuildFile; fileRef = DC993AB31C4AB63700E409DC /* bowie.png */; };
+		DC993AB91C4AB63700E409DC /* bowie_lightning.png in Resources */ = {isa = PBXBuildFile; fileRef = DC993AB41C4AB63700E409DC /* bowie_lightning.png */; };
+		DC993ABA1C4AB63700E409DC /* bowie_upvotearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DC993AB51C4AB63700E409DC /* bowie_upvotearrow.png */; };
 		DCABAFEF1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFEE1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift */; };
 		DCABAFF11C4959AE000A224D /* WHSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFF01C4959AE000A224D /* WHSegues.swift */; };
 		DCABAFF41C496716000A224D /* WHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFF31C496716000A224D /* WHUser.swift */; };
@@ -60,6 +67,13 @@
 		DC993AA61C4A6F6100E409DC /* WHMainTableVeiwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHMainTableVeiwCell.swift; sourceTree = "<group>"; };
 		DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHTableViewCellId.swift; sourceTree = "<group>"; };
 		DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHMusicHandler.swift; sourceTree = "<group>"; };
+		DC993AAC1C4A831C00E409DC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DC993AAE1C4A83DA00E409DC /* WHSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHSong.swift; sourceTree = "<group>"; };
+		DC993AB11C4AB63700E409DC /* 5s_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5s_icon.png; sourceTree = "<group>"; };
+		DC993AB21C4AB63700E409DC /* 6s_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6s_icon.png; sourceTree = "<group>"; };
+		DC993AB31C4AB63700E409DC /* bowie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bowie.png; sourceTree = "<group>"; };
+		DC993AB41C4AB63700E409DC /* bowie_lightning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bowie_lightning.png; sourceTree = "<group>"; };
+		DC993AB51C4AB63700E409DC /* bowie_upvotearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bowie_upvotearrow.png; sourceTree = "<group>"; };
 		DCABAFEE1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHCurrentlyPlayingViewController.swift; sourceTree = "<group>"; };
 		DCABAFF01C4959AE000A224D /* WHSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHSegues.swift; sourceTree = "<group>"; };
 		DCABAFF31C496716000A224D /* WHUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHUser.swift; sourceTree = "<group>"; };
@@ -90,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC993AAD1C4A831D00E409DC /* MediaPlayer.framework in Frameworks */,
 				0D7D408DD8D7E2649C06809E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,9 +138,22 @@
 		D8563745BE9881EDD7A30159 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC993AAC1C4A831C00E409DC /* MediaPlayer.framework */,
 				D59F1C2B2137DE26C81DBFA7 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC993AB01C4AB63700E409DC /* whoot_assets */ = {
+			isa = PBXGroup;
+			children = (
+				DC993AB11C4AB63700E409DC /* 5s_icon.png */,
+				DC993AB21C4AB63700E409DC /* 6s_icon.png */,
+				DC993AB31C4AB63700E409DC /* bowie.png */,
+				DC993AB41C4AB63700E409DC /* bowie_lightning.png */,
+				DC993AB51C4AB63700E409DC /* bowie_upvotearrow.png */,
+			);
+			path = whoot_assets;
 			sourceTree = "<group>";
 		};
 		DCD58C5B1C49121C00D900AD = {
@@ -153,6 +181,7 @@
 		DCD58C661C49121C00D900AD /* Whoot */ = {
 			isa = PBXGroup;
 			children = (
+				DC993AB01C4AB63700E409DC /* whoot_assets */,
 				DC993AA81C4A713C00E409DC /* WHTableViewCellId.swift */,
 				DCABAFF31C496716000A224D /* WHUser.swift */,
 				DCABAFF51C49FD92000A224D /* WHPicHandler.swift */,
@@ -175,6 +204,7 @@
 				DC993AA21C4A5C7200E409DC /* WhootColors.swift */,
 				DC993AA41C4A6AB100E409DC /* WHNotifications.swift */,
 				DC993AAA1C4A7F9000E409DC /* WHMusicHandler.swift */,
+				DC993AAE1C4A83DA00E409DC /* WHSong.swift */,
 			);
 			path = Whoot;
 			sourceTree = "<group>";
@@ -304,8 +334,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC993AB91C4AB63700E409DC /* bowie_lightning.png in Resources */,
+				DC993AB71C4AB63700E409DC /* 6s_icon.png in Resources */,
 				DCD58C751C49121C00D900AD /* LaunchScreen.storyboard in Resources */,
+				DC993ABA1C4AB63700E409DC /* bowie_upvotearrow.png in Resources */,
+				DC993AB81C4AB63700E409DC /* bowie.png in Resources */,
 				DCD58C721C49121C00D900AD /* Assets.xcassets in Resources */,
+				DC993AB61C4AB63700E409DC /* 5s_icon.png in Resources */,
 				DCD58C6D1C49121C00D900AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +416,7 @@
 			files = (
 				DCABAFF81C4A062C000A224D /* WHRestHandler.swift in Sources */,
 				DCD58C701C49121C00D900AD /* Whoot.xcdatamodeld in Sources */,
+				DC993AAF1C4A83DA00E409DC /* WHSong.swift in Sources */,
 				DCD58C9C1C4913DA00D900AD /* WHFacebookHandler.swift in Sources */,
 				DCABAFEF1C4958C9000A224D /* WHCurrentlyPlayingViewController.swift in Sources */,
 				DCABAFF41C496716000A224D /* WHUser.swift in Sources */,

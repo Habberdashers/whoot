@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.view.backgroundColor = UIColor.redColor()
-        
         self.performSegueWithIdentifier(WHSegue.RootToLogin.rawValue, sender: self)
         
 //        let userDefaults = NSUserDefaults.standardUserDefaults()

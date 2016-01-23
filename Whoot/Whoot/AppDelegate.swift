@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let fbHandler = WHFacebookHandler()
     let picCache = WHPicCache()
     let userManager = WHUserManager()
+    let musicHandler = WHMusicHandler()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
